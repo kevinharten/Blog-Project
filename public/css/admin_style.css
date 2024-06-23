@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+
+
+
+body{
+    background-size: cover;
+}
+
+
+
+
+.form {
+    display: flex;    
+    width: 200%;
+    transition: transform 0.5s ease;
+}
+
+input[type="checkbox"]:checked ~ .form {
+    transform: translateX(-50%);
+}
+
+.form-login,
+.form-signup {
+    width: 20%;
+    padding: 40px 250px;
+}
+
+.form-login h2,
+.form-signup h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-login input,
+.form-signup input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.form-login button,
+.form-signup button {
+    width: 30%;
+    padding: 10px ;
+    background: #1c1c1c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.form-login button:hover,
+.form-signup button:hover {
+    background: #0056b3;
+}
+
+.btn {
+    background-color: #1c1c1c;
+}

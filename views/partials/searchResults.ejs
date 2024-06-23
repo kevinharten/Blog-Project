@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="/path/to/your/style.css">
+</head>
+<body>
+    <header class="header">
+        <a href="/" class="header__logo">NodeJS</a>
+        <nav class="header__nav">
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="main">
+        <h1>Search Results for "<%= searchTerm %>"</h1>
+        <% if (searchResults.length > 0) { %>
+            <ul class="search-results">
+                <% searchResults.forEach(result => { %>
+                    <li class="search-result">
+                        <h2><%= result.title %></h2>
+                        <p><%= result.body %></p>
+                    </li>
+                <% }) %>
+            </ul>
+        <% } else { %>
+            <p>No results found for "<%= searchTerm %>".</p>
+        <% } %>
+    </main>
+</body>
+</html>

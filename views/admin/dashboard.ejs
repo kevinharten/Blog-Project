@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/dashboard_style.css">
+</head>
+<body>
+<div class="dashboard-page">
+    <form action="/logout" method="POST" style="display:inline;">
+        <button type="submit" class="btn logout-btn">Logout</button>
+    </form>
+    <div class="dashboard">
+        
+        <main class="main-content">
+            <div class="content-header">
+                <h2>Posts</h2>
+                <!-- <button class="add-post">+ Add Post</button> -->
+                <a href="/add-post" class="btn add-post">+ Add Post</a><br>
+            </div>
+            <ul class="admin-posts">
+                <% data.forEach(post => { %>
+                    <li>
+                        <a href="/post/<%= post._id %>">
+                            <%= post.title %> &nearr;
+                        </a>
+                        <div class="admin-post-controls">
+                            <a href="/edit-post/<%= post._id %>" class="btn">Edit</a>
+                            <form action="/delete-post/<%= post._id %>?_method=DELETE" method="POST">
+                                <input type="submit" value="Delete" class="btn">
+                            </form>
+                        </div>
+                    </li>
+                <% }) %>
+            </ul>
+        </main>
+    </div>
+</div>
+</body>
+</html>

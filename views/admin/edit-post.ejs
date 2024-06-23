@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post</title>
+    <link rel="stylesheet" href="/css/dashboard_style.css">
+</head>
+<body>
+<a href="/dashboard">&larr; Back</a>
+<div class="admin-title">
+    <h2>Edit Post</h2>
+</div>
+<form action="/edit-post/<%= post._id %>" method="POST">
+    <label for="title"><b>Title</b></label>
+    <input type="text" placeholder="Post Title" name="title" value="<%= post.title %>">
+    <label for="body"><b>Content</b></label>
+    <textarea name="body" id="body" cols="50" rows="10"><%= post.body %></textarea>
+    <input type="submit" value="Update" class="btn">
+</form>
+</body>
+</html>
