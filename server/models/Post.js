@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-
 const Schema = mongoose.Schema;
-const PostSchema = new Schema ({
+
+// Define the schema for Post
+const PostSchema = new Schema({
     title: {
         type: String,
         required: true
@@ -10,14 +11,13 @@ const PostSchema = new Schema ({
         type: String,
         required: true
     },
-    createdAt: {
-        type: Date,
-        default: Date.now
-    },
-    updatedAt: {
+    date: {
         type: Date,
         default: Date.now
     }
 });
 
-module.exports = mongoose.model('Post', PostSchema);
+// Check if the model already exists before defining it
+const Post = mongoose.models.Post || mongoose.model('Post', PostSchema);
+
+module.exports = Post;
